@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Components",
+    "\\Components\\Global",
+    "\\Components\\Login",
+    "\\Components\\Profile",
+    "\\Components\\Registration",
+    "\\Components\\Splash",
+    "\\Definitions",
+    "\\Models",
+    "\\Shared"
+  ],
+  "SelectedNode": "\\Components\\Login\\Login.tsx",
+  "PreviewInSolutionExplorer": false
+}
