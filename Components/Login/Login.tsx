@@ -5,11 +5,10 @@ import { Alert, Button, Platform, Pressable, SafeAreaView } from 'react-native';
 import { Text, StyleSheet, TextInput, View } from 'react-native';
 import Input from '../../Shared/Forms/Input';
 import globalStyles from '../../Shared/styles';
+import { useAuth } from '../Context/AuthContext';
 
 
 const Login = (props:any) => {
-    const [loading, setLoading] = useState(false);
-    const [showLogin, setShowLogin] = useState(false);
     const { control, handleSubmit, formState: { errors }, setValue, watch } = useForm({
         defaultValues: {
             'Email': '',
@@ -18,16 +17,16 @@ const Login = (props:any) => {
     });
     const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
+    const auth = useAuth();
+
+
     const loginHandler = (data: any) => {
-        setLoading(true);
         console.log(data);
         Alert.alert(JSON.stringify(data));
         if (Platform.OS === 'web') {
             alert(JSON.stringify(data));
         }
-
-        authUser().then();
-
+        auth.signIn(data.email, data.password);
 
     }
 

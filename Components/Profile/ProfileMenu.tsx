@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, Alert, Modal, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, Platform } from 'react-native';
 import globalStyles from '../../Shared/styles';
-import AuthContext from '../Context/AuthContext';
+import { useAuth } from '../Context/AuthContext';
 
 const ProfileMenu = (props: any) => {
 
     const [modalVisible, setModalVisible] = useState(false);
+    const auth = useAuth();
+
     const logOutHandler = () => {
         console.log("Log out?")
-        Alert.alert('Do you want to log out?',
-            "You will be returned to the login screen",
-            [{
-                text: "Cancel", onPress: () => console.log("Cancel Pressed"), style: "cancel"
-            }, { text: "Log Out", onPress: () => { console.log("set value in context to logged out. remove all tokens.") } }]);
-    }
-    // allows us to access the upper level context storage (user information)
-    const userFromContext = React.useContext(AuthContext);
+        if (Platform.OS !== 'web') {
+            Alert.alert('Do you want to log out?',
+                "You will be returned to the login screen",
+                [{
+                    text: "Cancel", onPress: () => console.log("Cancel Pressed"), style: "cancel"
+                }, { text: "Log Out", onPress: () => { auth.signOut } }]);
+        } else {
+            console.log("LOGGING OUT WIHT WEB")
+            auth.signOut();
 
-    // run right after the component dom is updated
-    //useEffect(() => {
-    //    alert(userFromContext);
-    //})
+        }
+    }
+
 
     return (
         <View style={globalStyles.container}>
-            <View></View>
+            <Text onPress={auth.signOut}>Sign Out</Text>
             <Modal
                 animationType="slide"
                 transparent={true}

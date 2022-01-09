@@ -13,7 +13,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
-const TabBottom = (props) => {
+const AppTabs = (props) => {
     return (
         <Tab.Navigator
             initialRouteName="Shopping List"
@@ -82,7 +82,7 @@ const TabBottom = (props) => {
     )
 }
 
-export default TabBottom;
+export default AppTabs;
 
 const styles = StyleSheet.create({
     centeredView: {

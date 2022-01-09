@@ -15,7 +15,6 @@ const AddItem = (props: any) => {
     const [text, setText] = useState(false);
 
     // allows us to access the upper level context storage (user information)
-    const userFromContext = React.useContext(AuthContext);
 
     const addItem = (text) => {
         // we get this function from the parent component

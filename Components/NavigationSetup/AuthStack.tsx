@@ -6,19 +6,19 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CardStyleInterpolators, TransitionPresets } from '@react-navigation/stack';
 
 
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { forFade } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/HeaderStyleInterpolators';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Registration from "../Registration/Registration";
 import Welcome from "../Login/Welcome";
 import Login from "../Login/Login";
+import AuthContext from "../Context/AuthContext";
+import Splash from "../Splash/Splash";
 
 const Stack = createNativeStackNavigator();
 
 
-
-
-const StackWelcome = () => {
+const AuthStack = () => {
     return (
         <Stack.Navigator
             initialRouteName="Welcome"
@@ -34,6 +34,7 @@ const StackWelcome = () => {
         >
 
             <Stack.Group screenOptions={{ presentation: 'modal' }}>
+                { }
                 <Stack.Screen
                     name='Welcome'
                     options={{
@@ -53,10 +54,18 @@ const StackWelcome = () => {
 
                     }}
                 />
+                <Stack.Screen
+                    name='Splash'
+                    component={Splash}
+                    options={{
+                        title: "Splash",
+
+                    }}
+                />
             </Stack.Group>
 
         </Stack.Navigator>
     )
 }
 
-export default StackWelcome;
+export default AuthStack;

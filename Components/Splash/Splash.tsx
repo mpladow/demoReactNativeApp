@@ -11,8 +11,6 @@ const Splash = (props) => {
     return (
         <View style={globalStyles.container}>
             <Text>THIS IS A SPLASH SCREEN</Text>
-            <Pressable onPress={() => props.navigation.navigate('Login')}><Text>Go Back</Text>
-            </Pressable>
         </View>
     )
 
