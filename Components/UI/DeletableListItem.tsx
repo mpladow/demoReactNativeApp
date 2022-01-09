@@ -32,7 +32,7 @@ export default DeletableListItem;
 const styles = StyleSheet.create({
     listItem: {
         borderRadius: 12,
-        minHeight: 50,
+        minHeight: 100,
         backgroundColor: '#eaeaea',
         marginBottom: 14,
         flex: 1,

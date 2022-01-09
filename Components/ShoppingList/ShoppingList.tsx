@@ -8,13 +8,15 @@ import { AntDesign } from '@expo/vector-icons';
 import ListItem from '../UI/ListItem';
 import { uuid } from 'uuidv4';
 import DeletableListItem from '../UI/DeletableListItem';
+import AddItem from './AddItem';
+
 
 
 const ShoppingList = (props: any) => {
 
     const [modalVisible, setModalVisible] = useState(false);
 
-    const [items, setItems] = useState([{id: 1, details: 'dfdfdfs'}]);
+    const [items, setItems] = useState([{id: '1', details: 'dfdfdfs'}]);
 
     const logOutHandler = () => {
         console.log("Log out?")
@@ -27,8 +29,11 @@ const ShoppingList = (props: any) => {
     // allows us to access the upper level context storage (user information)
     const userFromContext = React.useContext(AuthContext);
 
-    const addItem = () => {
-
+    const addItemHandler = (text) => {
+        console.log(text);
+        setItems((oldArray) => {
+            return [{ id: uuid(), details: text }, ...oldArray]
+        })
     }
     const deleteItemHandler = (id) => {
         setItems((oldArray) => {
@@ -38,20 +43,14 @@ const ShoppingList = (props: any) => {
 
     return (
         <SafeAreaView style={globalStyles.container}>
-            <TextInput style={styles.input} placeholder='Add Item ...'></TextInput>
-            <TouchableOpacity style={styles.button} onPress={() => { }}>
-                <AntDesign name="plus" size={24} color="black" />
-                <Text>
-                    Add Item
-                </Text>
-            </TouchableOpacity>
+            <AddItem addItem={addItemHandler}/>
             <FlatList style={{width: '100%'}} data={items}
                 renderItem={({ item }) => <DeletableListItem
                     item={item}
                     deleteItem={deleteItemHandler} />}
             />
         </SafeAreaView>)
-
+     
 }
 
 const styles = StyleSheet.create({
@@ -62,16 +61,7 @@ const styles = StyleSheet.create({
         width: '100%',
         marginBottom: 6
     },
-    button: {
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2,
-        justifyContent: 'center',
-        alignContent: 'center',
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#eaeaea'
-    },
+
     buttonOpen: {
         backgroundColor: "#F194FF",
     },
