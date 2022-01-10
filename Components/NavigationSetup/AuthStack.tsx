@@ -9,6 +9,7 @@ import { CardStyleInterpolators, TransitionPresets } from '@react-navigation/sta
 import React, { useContext, useEffect, useState } from 'react';
 import { forFade } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/HeaderStyleInterpolators';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import Registration from "../Registration/Registration";
 import Welcome from "../Login/Welcome";
 import Login from "../Login/Login";
@@ -59,7 +60,10 @@ const AuthStack = () => {
                     component={Splash}
                     options={{
                         title: "Splash",
+<<<<<<< HEAD:Components/NavigationSetup/AuthStack.tsx
 
+=======
+>>>>>>> Added authorization and authcontexts:Components/NavigationSetup/StackWelcome.tsx
                     }}
                 />
             </Stack.Group>
