@@ -3,7 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, SafeAreaView, StyleSheet, Text, View, Image, ImageBackground, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CardStyleInterpolators, TransitionPresets } from '@react-navigation/stack';
 
 
 import React, { useContext, useEffect, useState } from 'react';
@@ -60,10 +59,6 @@ const AuthStack = () => {
                     component={Splash}
                     options={{
                         title: "Splash",
-<<<<<<< HEAD:Components/NavigationSetup/AuthStack.tsx
-
-=======
->>>>>>> Added authorization and authcontexts:Components/NavigationSetup/StackWelcome.tsx
                     }}
                 />
             </Stack.Group>

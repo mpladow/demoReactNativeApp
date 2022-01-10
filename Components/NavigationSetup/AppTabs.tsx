@@ -1,12 +1,12 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Button, Pressable, View, StyleSheet } from "react-native";
-import MessageList from "../Messages/MessageList";
-import ProfileMenu from "../Profile/ProfileMenu";
 import ShoppingList from "../ShoppingList/ShoppingList";
 import Splash from "../Splash/Splash";
 import { Feather, Entypo, Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import MessageListStack from "../Messages/MessageListStack";
+import JobsStack from "../Jobs/JobsStack";
 
 
 
@@ -19,21 +19,21 @@ const AppTabs = (props) => {
             initialRouteName="Shopping List"
             screenOptions={
                 {
+                    headerShown: false,
                     headerTintColor: 'green',
                     headerStyle: { backgroundColor: 'white' },
                     headerTitleStyle: {
                         fontWeight: 'bold'
                     },
-                    headerTitleAlign: 'center',
-
+                    headerTitleAlign: 'center'
                 }}>
             <Tab.Screen
-                name='ProfileMenu'
-                component={ProfileMenu}
+                name='Jobs'
+                component={JobsStack}
                 options={
                     {
                         tabBarIcon: (() => (
-                            <Feather name="help-circle" size={24} color="black" />
+                            <Ionicons name="briefcase-outline" size={24} color="black" />
                         )),
                         headerRight: () => (
                             <Pressable onPress={() => { props.navigation.navigate('Splash') }}>
@@ -52,7 +52,7 @@ const AppTabs = (props) => {
                     }
                 }
             />
-            <Tab.Screen name='Message List' component={MessageList}
+            <Tab.Screen name='Message List' component={MessageListStack}
                 options={
                     {
                         tabBarIcon: (() => (

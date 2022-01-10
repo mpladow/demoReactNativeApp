@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import globalStyles from '../../Shared/styles';
+import mobStyles from '../../Styles/styles';
 import { RootStackScreenProps } from '../../Definitions/types';
 
 
 const NotFound = (navigation) => {
-    <View style={globalStyles.container}>
+    <View style={mobStyles.container}>
         <Text>Page not found</Text>
         <TouchableOpacity onPress={() => navigation.replace('Root')} style={styles.link}>
-            <Text style={globalStyles.linkText}>Go to home screen!</Text>
+            <Text style={mobStyles.linkText}>Go to home screen!</Text>
         </TouchableOpacity>
     </View>
 }

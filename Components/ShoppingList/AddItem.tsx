@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, TextInput, ListView, FlatList } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import globalStyles from '../../Shared/styles';
-import AuthContext from '../Context/AuthContext';
 import { AntDesign } from '@expo/vector-icons';
-import ListItem from '../UI/ListItem';
-import { uuid } from 'uuidv4';
-import DeletableListItem from '../UI/DeletableListItem';
-
 
 const AddItem = (props: any) => {
 

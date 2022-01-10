@@ -29,4 +29,15 @@ export default StyleSheet.create({
         color: '#2e78b7',
     },
 
+    // common
+    textSmall:{
+        fontSize: 12
+    },
+    textMedium: {
+        fontSize: 16
+    },
+    textLarge: {
+        fontSize: 20
+    }
+
 });

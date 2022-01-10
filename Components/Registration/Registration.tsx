@@ -3,13 +3,12 @@ import React, { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { ImageBackground, Switch, StyleSheet, Text, View, Button, Image, ScrollView, TextInput, Alert, Platform, SafeAreaView } from 'react-native';
 import { Demo } from '../../Models/Demo';
-import CheckboxGroup from '../../Shared/Forms/CheckboxGroup';
-import Input from '../../Shared/Forms/Input';
-import RadioGroup from '../../Shared/Forms/RadioGroup';
-import CSwitch from '../../Shared/Forms/Switch';
-import globalStyles from '../../Shared/styles';
-import FileSelect from '../../Shared/Forms/FileSelect';
-
+import Input from '../Shared/Forms/Input';
+import CSwitch from '../Shared/Forms/Switch';
+import CheckboxGroup from '../Shared/Forms/CheckboxGroup';
+import RadioGroup from '../Shared/Forms/RadioGroup';
+import FileSelect from '../Shared/Forms/FileSelect';
+import mobStyles from '../../Styles/styles' 
 
 
 const Registration = ({ navigation, route}) => {
@@ -57,13 +56,13 @@ const Registration = ({ navigation, route}) => {
 
 
     return (
-        <SafeAreaView style={globalStyles.container}>
+        <SafeAreaView style={mobStyles.container}>
             <View style={styles.headerBG}>
                 <Image style={styles.logo} source={require('../../assets/adaptive-icon.png')} />
                 <Text>Welcome</Text>
             </View>
 
-            <ScrollView style={[{ flex: 4, width: '100%', paddingBottom: 60 }, globalStyles.card]}>
+            <ScrollView style={[{ flex: 4, width: '100%', paddingBottom: 60 }, mobStyles.card]}>
 
                 <Controller
                     name='FirstName'
@@ -75,7 +74,7 @@ const Registration = ({ navigation, route}) => {
                             error={errors.FirstName}
                             errorText={errors.FirstName?.message}
                             autoCorrect={false}
-                            style={globalStyles.cInput}
+                            style={mobStyles.cInput}
                             placeholder={"Enter First Name"}
                             onChangeText={(value: any) => { onChange(value) }}
                             value={value}
@@ -99,7 +98,7 @@ const Registration = ({ navigation, route}) => {
                             error={errors.Surname}
                             errorText={errors.Surname?.message}
                             autoCorrect={false}
-                            style={globalStyles.cInput}
+                            style={mobStyles.cInput}
                             placeholder={"Enter Surname"}
                             onChangeText={(value: any) => { onChange(value) }}
                             value={value}
@@ -123,7 +122,7 @@ const Registration = ({ navigation, route}) => {
                             autoCorrect={false}
                             error={errors.Email}
                             errorText={errors.Email?.message}
-                            style={globalStyles.cInput}
+                            style={mobStyles.cInput}
                             placeholder={"Enter Email"}
                             onChangeText={(value) => { onChange(value) }}
                             value={value}

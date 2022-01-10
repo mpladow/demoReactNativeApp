@@ -1,6 +1,6 @@
 import { useController, useForm } from 'react-hook-form';
 import { ImageBackground, StyleSheet, Text, View, Button, Image, ScrollView, TextInput } from 'react-native';
-import globalStyles from '../styles';
+import mobStyles from '../../../Styles/styles'
 
 
 const Input = (props: any) => {
@@ -9,7 +9,7 @@ const Input = (props: any) => {
         <>
             {props.showLabel && <Text>{props.labelName}</Text>}
             
-            <TextInput style={[globalStyles.cInput, props.error && styles.error, props.style]} {...props}
+            <TextInput style={[mobStyles.cInput, props.error && styles.error, props.style]} {...props}
             />
             {props.errorText && (
                 <Text style={styles.error}>{props.errorText}</Text>

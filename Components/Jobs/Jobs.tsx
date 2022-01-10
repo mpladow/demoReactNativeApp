@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, Platform } from 'react-native';
-import globalStyles from '../../Shared/styles';
+import mobStyles from '../../Styles/styles';
 import { useAuth } from '../Context/AuthContext';
 
-const ProfileMenu = (props: any) => {
+const Jobs = (props: any) => {
 
     const [modalVisible, setModalVisible] = useState(false);
     const auth = useAuth();
@@ -25,7 +25,7 @@ const ProfileMenu = (props: any) => {
 
 
     return (
-        <View style={globalStyles.container}>
+        <View style={mobStyles.container}>
             <Text onPress={auth.signOut}>Sign Out</Text>
             <Modal
                 animationType="slide"
@@ -101,4 +101,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ProfileMenu;
+export default Jobs;

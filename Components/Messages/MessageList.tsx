@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import globalStyles from '../../Shared/styles';
+import mobStyles from '../../Styles/styles';
 import AuthContext from '../Context/AuthContext';
 import ListItem from '../UI/ListItem';
+import MessageListItem from './MessageListItem';
+import { uuid } from 'uuidv4';
+import { Message } from '../../Definitions/types';
+import PlatformContext from '../Context/PlatformContext';
+import webStyles from '../../Styles/webStyles';
 
-const MESSAGE_DATA = [{ id: '1', title: "Test message 1" }, { id: '2', title: "Test message 2" }]
+const MESSAGE_DATA: Array<Message> = [{ id: '1', title: "Test message 1", message: '' }, { id: '2', title: "Happy new year", message: '' }]
 
 
 const MessageList = () => {
-    let [data, setData] = useState(MESSAGE_DATA);
+    // EXAMPLE - ADDING VALUES TO AN ARRAY - SIMPLE METHOD
+    const platformContext = useContext(PlatformContext)
+    let [data, setData] = useState<Array<Message>>(MESSAGE_DATA as Array<Message>);
 
     const addToMessageList = () => {
         console.log("Added")
         // get data from database
-        const newData = { id: '3', title: "This is a new message" };
+        const newData: Message = { id: uuid(), title: "This is a new message", message: '' };
         setData(oldArray => [...oldArray, newData]);
-
-
     }
     useEffect(() => {
 
@@ -27,17 +32,21 @@ const MessageList = () => {
 
 
 
-    return (<SafeAreaView style={globalStyles.container}>
+    return (<SafeAreaView style={platformContext.web ? webStyles.container : mobStyles.container}>
         <View style={styles.buttonsGroupLarge} >
-            <TouchableOpacity onPress={addToMessageList} style={styles.buttonLarge}><Text >Add Doodad 1</Text></TouchableOpacity>
-            <View style={styles.buttonLarge}><Text>Add Doodad 2</Text></View>
+            <TouchableOpacity onPress={addToMessageList} style={styles.buttonLarge}><Text >Add new message</Text></TouchableOpacity>
         </View>
 
         <View style={styles.sectionBottom}>
             <ScrollView>
                 <FlatList data={data}
-                    renderItem={(item) => (<ListItem title={item.item.title} />)}
-                    keyExtractor={item => item.id} />
+                    renderItem={(item) => (
+                        <MessageListItem
+                            title={item.item.title}
+                            id={item.item.id}
+                        />)
+                    }
+                />
             </ScrollView>
         </View>
 
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#ddd',
         width: '100%',
-        justifyContent: 'space-evenly',
+        justifyContent: 'flex-start'
     },
     buttonLarge: {
         padding: 6,

@@ -33,3 +33,17 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
     BottomTabScreenProps<RootTabParamList, Screen>,
     NativeStackScreenProps<RootStackParamList>
 >;
+
+// 
+
+export type Message = {
+    id: string | number;
+    title: string;
+    message: string;
+}
+
+export type PlatformType = {
+    web: boolean;
+    iOS: boolean;
+    android: boolean;
+}

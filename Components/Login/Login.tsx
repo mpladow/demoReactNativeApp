@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Alert, Button, Platform, Pressable, SafeAreaView } from 'react-native';
 import { Text, StyleSheet, TextInput, View } from 'react-native';
-import Input from '../../Shared/Forms/Input';
-import globalStyles from '../../Shared/styles';
+import mobStyles from '../../Styles/styles';
 import { useAuth } from '../Context/AuthContext';
+import Input from '../Shared/Forms/Input';
 
 
 const Login = (props:any) => {
@@ -40,7 +40,7 @@ const Login = (props:any) => {
         }
     }
     return (
-        <SafeAreaView style={globalStyles.container}>
+        <SafeAreaView style={mobStyles.container}>
             <Text>Login</Text>
             <Controller
                 name='Email'
@@ -51,7 +51,7 @@ const Login = (props:any) => {
                         error={errors.Email}
                         errorText={errors.Email?.message}
                         autoCorrect={false}
-                        style={globalStyles.cInput}
+                        style={mobStyles.cInput}
                         placeholder={"Enter Email"}
                         onChangeText={(value: any) => { onChange(value) }}
                         value={value}
@@ -77,7 +77,7 @@ const Login = (props:any) => {
                         error={errors.Password}
                         errorText={errors.Password?.message}
                         autoCorrect={false}
-                        style={globalStyles.cInput}
+                        style={mobStyles.cInput}
                         placeholder={"Enter Password"}
                         onChangeText={(value: any) => { onChange(value) }}
                         value={value}

@@ -1,6 +1,6 @@
 import { useController, useForm } from 'react-hook-form';
 import { ImageBackground, Switch, StyleSheet, Text, View, Button, Image, ScrollView, TextInput } from 'react-native';
-import globalStyles from '../styles';
+import globalStyles from '../../../Styles/styles';
 
 
 const CSwitch = (props: any) => {
