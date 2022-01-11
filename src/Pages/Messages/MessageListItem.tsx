@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import mobStyles from '../../Styles/styles';
 
 
-const MessageListItem = (props) => {
+const MessageListItem = (props:any) => {
     const navigation = useNavigation()
     
 

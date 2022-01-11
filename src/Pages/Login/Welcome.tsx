@@ -22,7 +22,7 @@ const Welcome = (props) => {
     return (
         <ImageBackground style={styles.imageBG} source={imageBG}>
             <View style={styles.logoContainer}>
-                <Image style={styles.logo} source={require('../../assets/adaptive-icon.png')} />
+                <Image style={styles.logo} source={require('../../../assets/adaptive-icon.png')} />
                 <Text>Welcome</Text>
             </View>
 

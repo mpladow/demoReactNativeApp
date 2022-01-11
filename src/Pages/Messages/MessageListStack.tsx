@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import MessageList from "./MessageList";
 import Message from "./Message";
+import ProfileModal from "../Profile/ProfileModal";
 
 const MessageListStack = () => {
 
@@ -8,9 +9,13 @@ const MessageListStack = () => {
 
     return (<MessageListStack.Navigator screenOptions={{
         headerTitleAlign: 'center',
+
+
     }}>
         <MessageListStack.Screen name="MessageList" component={MessageList}></MessageListStack.Screen>
         <MessageListStack.Screen name='Message' component={Message}></MessageListStack.Screen>
+
+        <MessageListStack.Screen name='Profile' component={ProfileModal}  />
     </MessageListStack.Navigator>)
 
 }

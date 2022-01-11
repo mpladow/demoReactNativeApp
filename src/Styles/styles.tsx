@@ -38,6 +38,10 @@ export default StyleSheet.create({
     },
     textLarge: {
         fontSize: 20
+    },
+
+    iconRound: {
+        backgroundColor: 'green', width: 35, height: 35, marginRight: 12, borderRadius: 25
     }
 
 });

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, Platform } from 'react-native';
 import mobStyles from '../../Styles/styles';
-import { useAuth } from '../Context/AuthContext';
+import { useAuth } from '../../Contexts/AuthContext';
 
 const Jobs = (props: any) => {
 

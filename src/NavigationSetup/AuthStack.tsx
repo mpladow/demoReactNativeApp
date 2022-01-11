@@ -1,7 +1,7 @@
 import "react-native-gesture-handler";
 import { StatusBar } from 'expo-status-bar';
-import { Button, SafeAreaView, StyleSheet, Text, View, Image, ImageBackground, Platform } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { Button, SafeAreaView, StyleSheet, Text, View, Image, ImageBackground, Platform, Pressable } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
@@ -9,16 +9,17 @@ import React, { useContext, useEffect, useState } from 'react';
 import { forFade } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/HeaderStyleInterpolators';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Registration from "../Registration/Registration";
-import Welcome from "../Login/Welcome";
-import Login from "../Login/Login";
-import AuthContext from "../Context/AuthContext";
-import Splash from "../Splash/Splash";
+import Registration from "../Pages/Registration/Registration";
+import Welcome from "../Pages/Login/Welcome";
+import Login from "../Pages/Login/Login";
+import AuthContext from "../Contexts/AuthContext";
+import Splash from "../Pages/Splash/Splash";
 
 const Stack = createNativeStackNavigator();
 
 
 const AuthStack = () => {
+    const nav = useNavigation();
     return (
         <Stack.Navigator
             initialRouteName="Welcome"
@@ -29,12 +30,18 @@ const AuthStack = () => {
                     headerTitleStyle: {
                         fontWeight: 'bold'
                     },
-                    headerTitleAlign: 'center'
+                    headerTitleAlign: 'center',
+
                 }}
         >
-
+            <Stack.Screen
+                name='Splash'
+                component={Splash}
+                options={{
+                    title: "Splash",
+                }}
+            />
             <Stack.Group screenOptions={{ presentation: 'modal' }}>
-                { }
                 <Stack.Screen
                     name='Welcome'
                     options={{
@@ -54,13 +61,7 @@ const AuthStack = () => {
 
                     }}
                 />
-                <Stack.Screen
-                    name='Splash'
-                    component={Splash}
-                    options={{
-                        title: "Splash",
-                    }}
-                />
+
             </Stack.Group>
 
         </Stack.Navigator>
@@ -68,3 +69,15 @@ const AuthStack = () => {
 }
 
 export default AuthStack;
+
+const styles = StyleSheet.create({
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+    },
+    icon: {
+        backgroundColor: 'green', width: 35, height: 35, marginRight: 12, borderRadius: 25
+    }
+});

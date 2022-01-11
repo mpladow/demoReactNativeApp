@@ -4,15 +4,15 @@ import { Button, SafeAreaView, StyleSheet, Text, View, Image, ImageBackground, P
 import { NavigationContainer } from '@react-navigation/native';
 
 
-import Splash from './Components/Splash/Splash';
+import Splash from './src/Pages/Splash/Splash';
 
 import { useState, useEffect } from 'react';
-import AppTabs from "./Components/NavigationSetup/AppTabs";
-import AuthProvider from "./Components/Context/AuthContext";
-import AuthStack from "./Components/NavigationSetup/AuthStack";
-import { Router } from "./Components/NavigationSetup/Router";
-import PlatformContext from "./Components/Context/PlatformContext";
-import { PlatformType } from "./Definitions/types";
+import AppTabs from "./src/NavigationSetup/AppTabs";
+import AuthProvider from "./src/Contexts/AuthContext";
+import AuthStack from "./src/NavigationSetup/AuthStack";
+import { Router } from "./src/NavigationSetup/Router";
+import PlatformContext from "./src/Contexts/PlatformContext";
+import { PlatformType } from "./src/Definitions/types";
 
 
 

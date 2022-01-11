@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from "react";
 import { SafeAreaView, Text } from "react-native";
 import { Message as MessageType} from "../../Definitions/types";
-import PlatformContext from "../Context/PlatformContext";
+import PlatformContext from "../../Contexts/PlatformContext";
 import webStyles from "../../Styles/webStyles";
 import appStyles from '../../Styles/styles';
 
-const Message = (props) => {
+const Message = (props:any) => {
 
     const platformContext = useContext(PlatformContext);
     const [message, setMessage] = useState<MessageType>({} as MessageType)

@@ -3,12 +3,12 @@ import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, ScrollView, Fl
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import mobStyles from '../../Styles/styles';
-import AuthContext from '../Context/AuthContext';
-import ListItem from '../UI/ListItem';
+import AuthContext from '../../Contexts/AuthContext';
+import ListItem from '../../Components/Lists/ListItem';
 import MessageListItem from './MessageListItem';
 import { uuid } from 'uuidv4';
 import { Message } from '../../Definitions/types';
-import PlatformContext from '../Context/PlatformContext';
+import PlatformContext from '../../Contexts/PlatformContext';
 import webStyles from '../../Styles/webStyles';
 
 const MESSAGE_DATA: Array<Message> = [{ id: '1', title: "Test message 1", message: '' }, { id: '2', title: "Happy new year", message: '' }]

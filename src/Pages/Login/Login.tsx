@@ -4,8 +4,8 @@ import { Controller, useForm } from 'react-hook-form';
 import { Alert, Button, Platform, Pressable, SafeAreaView } from 'react-native';
 import { Text, StyleSheet, TextInput, View } from 'react-native';
 import mobStyles from '../../Styles/styles';
-import { useAuth } from '../Context/AuthContext';
-import Input from '../Shared/Forms/Input';
+import { useAuth } from '../../Contexts/AuthContext';
+import Input from '../../Components/Shared/Forms/Input';
 
 
 const Login = (props:any) => {

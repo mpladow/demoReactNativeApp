@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, TextInput, ListView, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { uuid } from 'uuidv4';
-import DeletableListItem from '../UI/DeletableListItem';
+import DeletableListItem from '../../Components/Lists/DeletableListItem';
 import AddItem from './AddItem';
 import mobStyles from '../../Styles/styles';
 

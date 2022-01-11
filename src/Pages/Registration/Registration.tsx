@@ -3,11 +3,11 @@ import React, { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { ImageBackground, Switch, StyleSheet, Text, View, Button, Image, ScrollView, TextInput, Alert, Platform, SafeAreaView } from 'react-native';
 import { Demo } from '../../Models/Demo';
-import Input from '../Shared/Forms/Input';
-import CSwitch from '../Shared/Forms/Switch';
-import CheckboxGroup from '../Shared/Forms/CheckboxGroup';
-import RadioGroup from '../Shared/Forms/RadioGroup';
-import FileSelect from '../Shared/Forms/FileSelect';
+import Input from '../../Components/Shared/Forms/Input';
+import CSwitch from '../../Components/Shared/Forms/Switch';
+import CheckboxGroup from '../../Components/Shared/Forms/CheckboxGroup';
+import RadioGroup from '../../Components/Shared/Forms/RadioGroup';
+import FileSelect from '../../Components/Shared/Forms/FileSelect';
 import mobStyles from '../../Styles/styles' 
 
 
@@ -58,7 +58,7 @@ const Registration = ({ navigation, route}) => {
     return (
         <SafeAreaView style={mobStyles.container}>
             <View style={styles.headerBG}>
-                <Image style={styles.logo} source={require('../../assets/adaptive-icon.png')} />
+                <Image style={styles.logo} source={require('../../../assets/adaptive-icon.png')} />
                 <Text>Welcome</Text>
             </View>
 
