@@ -19,7 +19,6 @@ const Jobs = (props: any) => {
         } else {
             console.log("LOGGING OUT WIHT WEB")
             auth.signOut();
-
         }
     }
 

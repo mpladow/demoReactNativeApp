@@ -4,18 +4,15 @@ import mobStyles from '../../../Styles/styles'
 
 
 const Input = (props: any) => {
-
     return (
         <>
             {props.showLabel && <Text>{props.labelName}</Text>}
-            
             <TextInput style={[mobStyles.cInput, props.error && styles.error, props.style]} {...props}
             />
             {props.errorText && (
                 <Text style={styles.error}>{props.errorText}</Text>
             )}
         </>
-
     )
 }
 

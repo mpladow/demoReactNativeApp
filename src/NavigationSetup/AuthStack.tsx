@@ -61,9 +61,7 @@ const AuthStack = () => {
 
                     }}
                 />
-
             </Stack.Group>
-
         </Stack.Navigator>
     )
 }

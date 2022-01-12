@@ -7,6 +7,7 @@ import AppTabs from './AppTabs';
 import AuthStack from './AuthStack';
 import { createStackNavigator } from '@react-navigation/stack';
 import ProfileModal from '../Pages/Profile/ProfileModal';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 
@@ -18,7 +19,30 @@ export const Router = () => {
     if (loading) {
         return <Login />
     }
-    const RootStack = createStackNavigator();
+    const RootStack = createNativeStackNavigator();
+
+    // set up linking for screens
+    // const linking = {
+    //     config: {
+    //         Welcome: {
+    //             path: 'welcome',
+    //             screens: {
+    //                 Login: 'login',
+    //                 Registration: 'registration'
+    //             }
+    //         },
+    //         // Feed: "feed/:sort?/:type",
+    //         // Menu: {
+    //         //     path: "menu",
+    //         //     screens: {
+    //         //         TabA: "a",
+    //         //         TabB: "b",
+    //         //     },
+    //         // },
+    //         // NotFound: "404",
+    //     },
+    // };
+    
     return (
         <NavigationContainer>
             <RootStack.Navigator>

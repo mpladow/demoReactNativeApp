@@ -1,15 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View, StyleSheet, ScrollView, FlatList, SafeAreaView } from 'react-native';
 import mobStyles from '../../Styles/styles';
-import AuthContext from '../../Contexts/AuthContext';
-import ListItem from '../../Components/Lists/ListItem';
 import MessageListItem from './MessageListItem';
-import { uuid } from 'uuidv4';
 import { Message } from '../../Definitions/types';
 import PlatformContext from '../../Contexts/PlatformContext';
 import webStyles from '../../Styles/webStyles';
+import ButtonLarge from '../../Components/Buttons/ButtonLarge';
+
 
 const MESSAGE_DATA: Array<Message> = [{ id: '1', title: "Test message 1", message: '' }, { id: '2', title: "Happy new year", message: '' }]
 
@@ -22,7 +19,9 @@ const MessageList = () => {
     const addToMessageList = () => {
         console.log("Added")
         // get data from database
-        const newData: Message = { id: uuid(), title: "This is a new message", message: '' };
+        const newData: Message = { 
+            id: Math.random.toString(), 
+            title: "This is a new message", message: '' };
         setData(oldArray => [...oldArray, newData]);
     }
     useEffect(() => {
@@ -30,11 +29,24 @@ const MessageList = () => {
         console.log(data)
     })
 
+    const onAlertPressHandler = () => {
+        alert('Unread button pressed. ');
+
+    }
 
 
     return (<SafeAreaView style={platformContext.web ? webStyles.container : mobStyles.container}>
-        <View style={styles.buttonsGroupLarge} >
-            <TouchableOpacity onPress={addToMessageList} style={styles.buttonLarge}><Text >Add new message</Text></TouchableOpacity>
+        <View style={mobStyles.buttonsGroupLarge} >
+
+            <ButtonLarge 
+            title="Unread"
+            onPress={onAlertPressHandler}
+            />
+            
+            <ButtonLarge 
+            title="Unread"
+            onPress={onAlertPressHandler}
+            />
         </View>
 
         <View style={styles.sectionBottom}>
@@ -62,7 +74,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#ddd',
         width: '100%',
-        justifyContent: 'flex-start'
+        alignItems: 'stretch'
     },
     buttonLarge: {
         padding: 6,
@@ -73,6 +85,6 @@ const styles = StyleSheet.create({
     sectionBottom: {
         flex: 4,
         width: '100%',
-        padding: 16
-    }
+    },
+
 });

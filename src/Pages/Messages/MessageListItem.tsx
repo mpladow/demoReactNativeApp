@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { ImageBackground, Switch, StyleSheet, Text, View, Button, Image, ScrollView, TextInput, Alert, Platform, SafeAreaView } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity,  StyleSheet, Text, View, Button, Image, ScrollView, TextInput, Alert, Platform, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import mobStyles from '../../Styles/styles';
 
@@ -17,7 +16,7 @@ const MessageListItem = (props:any) => {
     return (
         <TouchableOpacity onPress={handleButtonPress} style={styles.listItem}>
             <Text style={mobStyles.textLarge}>
-                { props.title}..
+                { props.title}
             </Text>
         </TouchableOpacity>
         

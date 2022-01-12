@@ -9,15 +9,12 @@ import JobsStack from "../Pages/Jobs/JobsStack";
 import HelpStack from "../Pages/Help/HelpStack";
 import { useNavigation } from "@react-navigation/native";
 import LearnStack from "../Pages/Learn/LearnStack";
-import ProfileModal from "../Pages/Profile/ProfileModal";
 import { createStackNavigator } from "@react-navigation/stack";
 
 
 
 
 const Tab = createBottomTabNavigator();
-
-const CommonNavigator = createStackNavigator();
 
 const AppTabs = (props: any) => {
     const nav = useNavigation();
@@ -33,14 +30,14 @@ const AppTabs = (props: any) => {
                         fontWeight: 'bold'
                     },
                     headerTitleAlign: 'center',
-
                 }}>
             <Tab.Group>
                 <Tab.Screen
-                    name='Jobs'
+                    name='JobsStack'
                     component={JobsStack}
                     options={
                         {
+                            title: 'Jobs',
                             tabBarIcon: (() => (
                                 <Ionicons name="briefcase-outline" size={24} color="black" />
                             )),
@@ -52,9 +49,10 @@ const AppTabs = (props: any) => {
 
                         }}
                 />
-                <Tab.Screen name='Learn' component={LearnStack}
+                <Tab.Screen name='LearnHome' component={LearnStack}
                     options={
                         {
+                            title: 'Learn',
                             tabBarIcon: (() => (
                                 <Ionicons name="school" size={24} color="black" />
                             )),
@@ -68,6 +66,7 @@ const AppTabs = (props: any) => {
                 <Tab.Screen name='Message List' component={MessageListStack}
                     options={
                         {
+                            title: 'Messages',
                             tabBarIcon: (() => (
                                 <AntDesign name="message1" size={24} color="black" />
                             ))

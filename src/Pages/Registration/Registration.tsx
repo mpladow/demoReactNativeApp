@@ -42,11 +42,9 @@ const Registration = ({ navigation, route}) => {
         try {
             const res = await fetch('https://jsonplaceholder.typicode.com/users/1');
             const { name, email } = await res.json();
-            console.log(name);
-            console.log(email);
             setValue("FirstName", name);
             setValue("Email", email);
-
+            fetch
         } catch (e) {
 
         }

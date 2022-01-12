@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --tunnel",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/ngrok": "^4.1.0",
     "@react-native-async-storage/async-storage": "~1.15.0",
     "@react-native-community/checkbox": "^0.5.9",
     "@react-native-community/masked-view": "^0.1.11",
@@ -25,6 +26,7 @@
     "expo": "~44.0.0",
     "expo-status-bar": "~1.2.0",
     "formik": "^2.2.9",
+    "linq": "^4.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-hook-form": "^7.22.5",
@@ -37,8 +39,7 @@
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
     "react-native-vector-icons": "^9.0.0",
-    "react-native-web": "0.17.1",
-    "uuidv4": "^6.2.12"
+    "react-native-web": "0.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

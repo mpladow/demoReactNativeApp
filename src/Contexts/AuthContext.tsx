@@ -1,6 +1,6 @@
 import React, { createContext, FC, useContext, useEffect, useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { uuid } from "uuidv4";
+import { TextInput } from "react-native-gesture-handler";
 
 // declare a new context of type auth context data
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -20,7 +20,6 @@ const AuthProvider: FC = ({ children }) => {
                 // if there is data, its converted to an object and we update the state
                 const _authData: AuthData = JSON.parse(authDataSerialized);
                 setAuthData(_authData);
-
             }
         } catch (e) {
 
@@ -39,7 +38,7 @@ const AuthProvider: FC = ({ children }) => {
         // get a token from the database
         // then
         
-        const _authData = { token: uuid(), email: email, name: password };
+        const _authData = { token: Math.random.toString(), email: email, name: password };
 
         //Set the data in the context, so the App can be notified
         //and send the user to the AuthStack
@@ -48,6 +47,8 @@ const AuthProvider: FC = ({ children }) => {
         // set the data in Asyn storage
         AsyncStorage.setItem('@AuthData', JSON.stringify(_authData)); 
     };
+
+
 
     const signOut = async () => {
         //Remove data from context, so the App can be notified
@@ -70,10 +71,10 @@ export default AuthProvider;
 
 export function useAuth(): AuthContextData {
     const context = useContext(AuthContext);
-    console.log(context, "context")
     if (!context) {
         throw new Error('useAuth must be used within an AuthProvider');
     }
 
     return context;
 }
+

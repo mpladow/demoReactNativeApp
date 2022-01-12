@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import { ImageBackground, Switch, StyleSheet, Text, View, Button, Image, ScrollView, TextInput, Alert, Platform, SafeAreaView } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {  } from 'react-native-gesture-handler';
 
 
 const DeletableListItem = (props) => {

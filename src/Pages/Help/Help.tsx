@@ -1,5 +1,5 @@
-import { SafeAreaView } from "react-native-safe-area-context"
-import { Text } from 'react-native';
+import React from 'react';
+import { Text, SafeAreaView } from 'react-native';
 
 const Help = () => {
     return (

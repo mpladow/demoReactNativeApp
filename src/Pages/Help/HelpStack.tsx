@@ -1,13 +1,15 @@
-import React from 'React';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import Help from './Help';
 import { StyleSheet, Pressable, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import ProfileModal from '../Profile/ProfileModal';
 
+
+
+
 const HelpStack = () => {
     const nav = useNavigation();
-    const HelpStack = createStackNavigator();
+    const HelpStack = createNativeStackNavigator();
 
     return (
         <HelpStack.Navigator
@@ -24,7 +26,7 @@ const HelpStack = () => {
             <HelpStack.Screen
                 name='Help'
                 component={Help}
-            />
+            ></HelpStack.Screen>
             <HelpStack.Screen
                 name='Profile'
                 component={ProfileModal}

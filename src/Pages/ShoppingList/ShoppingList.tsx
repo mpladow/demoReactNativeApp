@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, TextInput, ListView, FlatList } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { uuid } from 'uuidv4';
+import React, { useState } from 'react';
+import { StyleSheet, TextInput,SafeAreaView , FlatList } from 'react-native';
 import DeletableListItem from '../../Components/Lists/DeletableListItem';
 import AddItem from './AddItem';
 import mobStyles from '../../Styles/styles';
 
 
-
 const ShoppingList = (props: any) => {
 
+    const [items, setItems] = useState([{ id: '1', details: 'dfdfdfs' }]);
 
-    const [items, setItems] = useState([{id: '1', details: 'dfdfdfs'}]);
 
- 
     const addItemHandler = (text) => {
         console.log(text);
         setItems((oldArray) => {
-            return [{ id: uuid(), details: text }, ...oldArray]
+            return [{ id: Math.random.toString(), details: text }, ...oldArray]
         })
     }
     const deleteItemHandler = (id) => {
@@ -27,15 +23,17 @@ const ShoppingList = (props: any) => {
     }
 
     return (
+        //View></View> = <div></div>
+        //<Text></Text>
         <SafeAreaView style={mobStyles.container}>
-            <AddItem addItem={addItemHandler}/>
-            <FlatList style={{width: '100%'}} data={items}
+            <AddItem addItem={addItemHandler} />
+            <FlatList
+                style={{ width: '100%' }} data={items}
                 renderItem={({ item }) => <DeletableListItem
                     item={item}
                     deleteItem={deleteItemHandler} />}
             />
         </SafeAreaView>)
-     
 }
 
 const styles = StyleSheet.create({

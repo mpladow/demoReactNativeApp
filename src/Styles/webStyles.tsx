@@ -9,8 +9,10 @@ export default StyleSheet.create({
         justifyContent: 'flex-start',
         flexWrap: 'wrap',
         alignSelf: 'center',
-        width: '75%',
-        padding: 12
+        width: '50%',
+        padding: 12, 
+        // gap: 6
+        margin: 6
     },
     card: {
         padding: 16,
@@ -28,6 +30,14 @@ export default StyleSheet.create({
     linkText: {
         fontSize: 14,
         color: '#2e78b7',
+    },
+    buttonsGroupLarge: {
+        padding: 16,
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#ddd',
+        width: '100%',
+        alignItems: 'stretch'
     },
 
 });

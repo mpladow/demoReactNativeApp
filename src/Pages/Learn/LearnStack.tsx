@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import LearnHome from './LearnHome';
 import { Pressable, View } from 'react-native';
 import styles from '../../Styles/styles';
@@ -9,12 +9,12 @@ import ProfileModal from '../Profile/ProfileModal';
 const LearnStack = () => {
 
     const nav = useNavigation();
-    const LearnStack = createStackNavigator();
+    const LearnStack = createNativeStackNavigator();
     return (<LearnStack.Navigator screenOptions={{
         headerTitleAlign: 'center',
 
         headerRight: () => (
-            <Pressable onPress={() => { nav.navigate('Splash') }}>
+            <Pressable onPress={() => { nav.navigate('Profile') }}>
                 <View style={styles.iconRound}></View>
             </Pressable>
         )

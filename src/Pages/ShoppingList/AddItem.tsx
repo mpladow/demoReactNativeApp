@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, Button, Alert, Modal, Pressable, StyleSheet, TextInput, ListView, FlatList } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, { useState } from 'react';
+import {TouchableOpacity, View, Text, StyleSheet, TextInput } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 const AddItem = (props: any) => {
