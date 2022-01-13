@@ -1,15 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { Button, SafeAreaView, StyleSheet, View, Image, ImageBackground, Platform, Pressable } from 'react-native';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { StyleSheet } from 'react-native';
+import {  useNavigation } from '@react-navigation/native';
 
-
-import React, { useContext, useEffect, useState } from 'react';
-
+import React from 'react';
 
 import Registration from "../Pages/Registration/Registration";
 import Welcome from "../Pages/Login/Welcome";
 import Login from "../Pages/Login/Login";
-import AuthContext from "../Contexts/AuthContext";
 import Splash from "../Pages/Splash/Splash";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -20,7 +16,7 @@ const AuthStack = () => {
     const nav = useNavigation();
     return (
         <Stack.Navigator
-            initialRouteName="Welcome"
+            initialRouteName="Welcome" 
             screenOptions={
                 {
                     headerTintColor: 'green',
