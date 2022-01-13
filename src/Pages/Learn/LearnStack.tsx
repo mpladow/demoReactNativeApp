@@ -22,7 +22,7 @@ const LearnStack = () => {
     }}>
         <LearnStack.Screen name='Learn' component={LearnHome}></LearnStack.Screen>
         <LearnStack.Screen name='Profile' component={ProfileModal}/>
-        <LearnStack.Screen name='LearnContent' component={LearnContent}></LearnStack.Screen>
+        <LearnStack.Screen name='LearnContent' component={LearnContent}></LearnStack.Screen> 
     </LearnStack.Navigator>)
 
 }
